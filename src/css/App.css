@@ -89,3 +89,7 @@ a.button.red{
     color: var(--main-color);
     font-weight: bold;
 }
+
+footer{
+    margin: 2em 0;
+}

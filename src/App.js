@@ -37,6 +37,11 @@ function App() {
 
       </section>
 
+      <footer className='flex f-row jc-space-between page-padding'>
+        <p>Footer soon</p>
+        <p>Pas envie de le faire !</p>
+      </footer>
+
     </div>
   );
 }
