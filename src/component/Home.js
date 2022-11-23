@@ -20,7 +20,7 @@ function Home() {
             </div>
         </div>
         
-        <img src={Truck_svg} alt='Looke logo' />
+        <img src={Truck_svg} alt='Truck icon' />
     </div>
   );
 }

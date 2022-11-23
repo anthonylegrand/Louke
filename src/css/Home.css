@@ -2,6 +2,8 @@
     height: 100%;
     padding-bottom: 2em;
 }
+/* Add responsive */
+#Home>div{padding-right: 5%;}
 #Home h2{
     font-size: 55px;
     line-height: 60px;
