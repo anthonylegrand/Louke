@@ -1,0 +1,11 @@
+.navbar ul a{
+    margin-left: 22px;
+    color: var(--navbar-text-color);
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+.navbar ul a.acctive{
+    color: var(--main-color);
+    font-size: 17px;
+}
