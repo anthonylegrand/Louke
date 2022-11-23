@@ -1,12 +1,6 @@
 #Service{
     height: 65%;
 }
-#Service>div:nth-child(1)>h3{
-    font-size: 45px;
-    line-height: 45px;
-    text-align: center;
-    max-width: 60%;
-}
 /* Add Responsive */
 #Service>div:nth-child(2){
     width: 60vw;
