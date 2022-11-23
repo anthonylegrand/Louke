@@ -1,0 +1,16 @@
+#Home{
+    height: 100%;
+    padding-bottom: 2em;
+}
+#Home h2{
+    font-size: 55px;
+    line-height: 60px;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+}
+#Home h2 b{ color: var(--main-color); }
+#Home h4{ font-size: 25px;line-height: 30px; }
+#Home a.button{
+    margin-right: 2em;
+    margin-top: 2em;
+}
