@@ -1,0 +1,38 @@
+:root {
+  --background-color: #fff;
+  --main-color: #EB2929;
+  --secondary-color: #FDECEA;
+
+  --title-text-color: #555555;
+  --main-text-color: #000000;
+  --secondary-text-color: #999999;
+}
+
+h2, .page-title{
+    font-size: 22px;
+    line-height: 20px;
+    color: var(--title-text-color);
+    font-weight: bold;
+}
+h3, .main-text{
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-text-color);
+    font-weight: 800;
+}
+p, .secondary-text{
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--secondary-text-color);
+}
+
+.page-padding{padding: 0 10%;}
+
+.flex{display: flex;}
+.f-row{flex-direction: row;}
+.f-col{flex-direction: column;}
+
+.jc-center{justify-content: center;}
+.jc-space-between{justify-content: space-between;}
+
+.ai-center{align-items: center;}
