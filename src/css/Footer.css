@@ -1,0 +1,12 @@
+.socials-medias img {
+  width: 32px;
+  height: 32px;
+  padding: 0 3px;
+}
+
+.separator {
+  width: 10%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border: none;
+}

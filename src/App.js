@@ -6,6 +6,7 @@ import Home from './component/Home';
 import Service from './component/Service';
 import Menu from './component/Menu';
 import ApplicationMobile from './component/ApplicationMobile';
+import Footer from './component/Footer';
 
 function App() {
   const [currentPage, setPage] = useState('/')
@@ -20,7 +21,7 @@ function App() {
       </section>
 
       <section className='flex jc-center ai-center colored'>
-        
+
         <Service />
 
       </section>
@@ -37,10 +38,7 @@ function App() {
 
       </section>
 
-      <footer className='flex f-row jc-space-between page-padding'>
-        <p>Footer soon</p>
-        <p>Pas envie de le faire !</p>
-      </footer>
+      <Footer />
 
     </div>
   );
