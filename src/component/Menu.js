@@ -3,7 +3,7 @@ import { FaListAlt, FaHamburger, FaCloudMoon, FaCoins, FaCrown, FaDice, FaFish }
 
 import './../css/Menu.css'
 
-import Article from './Menu_Article'
+import Article from './MenuArticle'
 
 // Pas beau mais que pour utiliser une map pour faire plaisir à Kevin ;)
 const LIST = [
@@ -37,6 +37,49 @@ const LIST = [
     }
 ]
 
+const pancakes = [
+  {
+    id: 1,
+    image: "",
+    title: "Mon pancake 1",
+    weight: "110g",
+    price: "10 €",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  },
+  {
+    id: 2,
+    image: "",
+    title: "Mon pancake 2",
+    weight: "110g",
+    price: "10 €",
+    description: "Voici la description de mon pancakes"
+  },
+  {
+    id: 3,
+    image: "",
+    title: "Mon pancake 3",
+    weight: "110g",
+    price: "10 €",
+    description: "Voici la description de mon pancakes"
+  },
+  {
+    id: 4,
+    image: "",
+    title: "Mon pancake 4",
+    weight: "110g",
+    price: "10 €",
+    description: "Voici la description de mon pancakes"
+  },
+  {
+    id: 5,
+    image: "",
+    title: "Mon pancake 5",
+    weight: "110g",
+    price: "10 €",
+    description: "Voici la description de mon pancakes"
+  }
+]
+
 function Menu() {
     const [ section, setSection ] = useState("")
     const [ active_article, setActive ] = useState(null)
@@ -60,8 +103,8 @@ function Menu() {
         <div className='flex f-row'>
 
             {
-                [0,1,2,3,4,5].map((i) => (
-                    <Article active_article={active_article} setActive={setActive} id={i} />
+                pancakes.map((pancake) => (
+                  <Article key={pancake.id} pancakes={pancake} active_article={active_article} setActive={setActive} id={pancake.id} />
                 ))
             }
 
