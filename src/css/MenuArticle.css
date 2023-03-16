@@ -36,6 +36,11 @@
   padding: 20px 0;
 }
 
+.list-ingredients > li {
+  list-style: none;
+  padding: 5px 0;
+}
+
 .pancake-box {
   flex-basis: 15%;
 }

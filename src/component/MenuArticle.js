@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
-import pancakes from './../img/stickers/pancakes.svg'
-
 // Images pancakes
 import pancake1 from '../img/pancakes/1.png'
 import pancake2 from '../img/pancakes/2.png'
@@ -20,7 +18,7 @@ import './../css/MenuArticle.css'
 const customStyles = {
   content: {
     bottom: 'auto',
-    height: '50vh',
+    height: '60vh',
     left: '50%',
     marginRight: '-50%',
     right: 'auto',
