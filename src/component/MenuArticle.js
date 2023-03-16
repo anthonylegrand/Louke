@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
 import pancakes from './../img/stickers/pancakes.svg'
@@ -37,9 +37,21 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 function MenuArticle(props) {
-
   let subtitle;
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isDisplay, setIsDisplay] = useState(true)
+
+  useEffect(() => {
+    // Set isDisplay state if pancakes filter include filter targeted
+    if (props.pancakes.filter.includes(props.filter)) {
+      setIsDisplay(true)
+    }
+
+    return () => { // Clear isDisplay state after every render
+      setIsDisplay(false)
+    };
+  }, [props.filter, props.pancakes.filter]);
 
   function openModal() {
     setIsOpen(true);
@@ -56,6 +68,7 @@ function MenuArticle(props) {
 
   const getImg = (id) => {
     let img = "";
+
     switch (id) {
       case 1:
         img = pancake1;
@@ -108,6 +121,7 @@ function MenuArticle(props) {
     <article
       className={'pancake-box flex f-col jc-space-between ai-center'+(props.active_article === props.id ? ' acctive' : '')}
       onMouseOver={()=>props.setActive(props.id)}
+      style={{ display: isDisplay ? 'block' : 'none', textAlign: "center"}}
     >
       <img src={getImg(props.pancakes.id)} alt='pancakes icon' />
       <h3 className='pancake-title'>{props.pancakes.title}</h3>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaListAlt, FaHamburger, FaCloudMoon, FaCoins, FaCrown, FaDice, FaFish } from 'react-icons/fa';
+import { FaHamburger, FaCloudMoon, FaCrown, FaDice } from 'react-icons/fa';
 
 import './../css/Menu.css'
 
@@ -8,25 +8,14 @@ import Article from './MenuArticle'
 // Pas beau mais que pour utiliser une map pour faire plaisir à Kevin ;)
 const LIST = [
     {
-        title: '',
-        icon: <FaListAlt/>
-    },
-    {
-        title: 'Menu',
-        icon: <FaFish/>
-    },
-    {
         title: 'Pancakes',
         icon: <FaHamburger/>
     },
     {
-        title: 'Accompagnement',
+        title: 'Accompagnements',
         icon: <FaCloudMoon/>
     },
-    {
-        title: 'Boissons',
-        icon: <FaCoins/>
-    },
+
     {
         title: 'Desserts',
         icon: <FaCrown/>
@@ -56,7 +45,7 @@ const pancakes = [
       "Morceaux de lardons",
       "30g de maïs doux ",
     ],
-    filter: ["Pancake"]
+    filter: ["Pancakes", "All"]
   },
   {
     id: 2,
@@ -73,7 +62,7 @@ const pancakes = [
       "20g de pépites de chocolat noir"
 
     ],
-    filter: ["Dessert", "Accompagnement"]
+    filter: ["Desserts", "Accompagnements", "All"]
   },
   {
     id: 3,
@@ -92,7 +81,7 @@ const pancakes = [
       "1 petite carotte râpée",
       "1/2 cuillère à café de cumin en poudre",
     ],
-    filter: ["Pancake"]
+    filter: ["Pancakes", "All"]
   },
   {
     id: 4,
@@ -113,7 +102,7 @@ const pancakes = [
       "1 pincée de clou de girofle en poudre",
 
     ],
-    filter: ["Promotion"]
+    filter: ["Promotions", "All"]
   },
   {
     id: 5,
@@ -134,7 +123,7 @@ const pancakes = [
       "1 pincée de poivre noir"
 
     ],
-    filter: ["Pancake", "Accompagnement"]
+    filter: ["Pancakes", "Accompagnements", "All"]
   },
   {
     id: 6,
@@ -153,7 +142,7 @@ const pancakes = [
       "1 cuillère à soupe de miel liquide",
       "1 pincée de poivre noir"
     ],
-    filter: ["Promotion"]
+    filter: ["Promotions", "All"]
   },
   {
     id: 7,
@@ -171,7 +160,7 @@ const pancakes = [
       "1/2 tasse de framboises fraîches ou surgelées",
       "1 cuillère à soupe de sucre"
     ],
-    filter: ["Dessert"]
+    filter: ["Desserts", "All"]
   },
   {
     id: 8,
@@ -191,7 +180,7 @@ const pancakes = [
       "Morceaux de lardons",
       "30g de maïs doux ",
     ],
-    filter: ["Dessert", "Accompagnement"]
+    filter: ["Desserts", "Accompagnements", "All"]
   },
   // {
   //   id: 9,
@@ -235,6 +224,14 @@ const pancakes = [
 function Menu() {
     const [ section, setSection ] = useState("")
     const [ active_article, setActive ] = useState(null)
+    const [ filter, setFilter ] = useState("All") // Hack to display all Pancakes on first render
+
+   const handleClick = (e) => {
+    const currentfilter = e.target.innerText
+
+    setSection(currentfilter);
+    setFilter(currentfilter);
+   }
 
   return (
     <div id='Menu' className='flex f-col ai-center jc-space-between page-padding'>
@@ -254,11 +251,11 @@ function Menu() {
 
         <div className='flex f-row'>
 
-            {
-                pancakes.map((pancake) => (
-                  <Article key={pancake.id} pancakes={pancake} active_article={active_article} setActive={setActive} id={pancake.id} />
-                ))
-            }
+          {
+              pancakes.map((pancake) => (
+                <Article key={pancake.id} pancakes={pancake} active_article={active_article} setActive={setActive} id={pancake.id} filter={filter} />
+              ))
+          }
 
         </div>
 
@@ -269,8 +266,9 @@ function Menu() {
 
   function createSectionComponent(title, icon, i){
     return (
-        <div key={i} className={section === title ? "acctive" : ""} onClick={()=>setSection(title)} >
-            {icon}<lore>{title}</lore>
+        // <div key={i} className={section === title ? "acctive" : ""} onClick={()=>setSection(title) } >
+        <div key={i} className={section === title ? "acctive" : ""} onClick={handleClick} >
+          {icon}<lore>{title}</lore>
         </div>
     )
   }

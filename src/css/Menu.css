@@ -21,11 +21,11 @@
 }
 #Menu>div:nth-child(2)>div>lore{ margin-left: 5px; }
 
-#Menu>div:nth-child(3){ 
+#Menu>div:nth-child(3){
     width: 100%;
     flex-wrap: wrap;
     gap: 4em;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #Menu article{
@@ -38,10 +38,13 @@
 }
 #Menu article.acctive{ background-color: var(--main-color); }
 #Menu article.acctive h3{ color: var(--background-color); }
-#Menu article.acctive p{ 
+#Menu article.acctive p{
     color: var(--background-color);
     opacity: .7;
     margin: 0.5em 0 1em;
+}
+#Menu article p{
+  margin: 0.5em 0 1em;
 }
 #Menu article button{
     transition: all .5s;
