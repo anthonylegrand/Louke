@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal';
+import React, { useEffect, useState } from 'react'
+import Modal from 'react-modal'
 
 // Images pancakes
 import pancake1 from '../img/pancakes/1.png'
@@ -27,18 +27,19 @@ const customStyles = {
     width: '50vw',
     backgroundColor: 'var(--secondary-color)',
     display: 'flex',
-    justifyContent: "center",
-    borderRadius: "20px",
-  },
-};
+    justifyContent: 'center',
+    borderRadius: '20px'
+  }
+}
 
-Modal.setAppElement('#root');
+Modal.setAppElement('#root')
 
 function MenuArticle(props) {
-  let subtitle;
+  let subtitle
 
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false)
   const [isDisplay, setIsDisplay] = useState(true)
+  const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
     // Set isDisplay state if pancakes filter include filter targeted
@@ -46,83 +47,84 @@ function MenuArticle(props) {
       setIsDisplay(true)
     }
 
-    return () => { // Clear isDisplay state after every render
+    return () => {
+      // Clear isDisplay state after every render
       setIsDisplay(false)
-    };
-  }, [props.filter, props.pancakes.filter]);
+    }
+  }, [props.filter, props.pancakes.filter])
 
-  function openModal() {
-    setIsOpen(true);
+  const openModal = () => {
+    setIsOpen(true)
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    subtitle.style.color = '#f00'
   }
 
   const getImg = (id) => {
-    let img = "";
+    let img = ''
 
     switch (id) {
       case 1:
-        img = pancake1;
-        break;
+        img = pancake1
+        break
 
       case 2:
-        img = pancake2;
-        break;
+        img = pancake2
+        break
       case 3:
-        img = pancake3;
-        break;
+        img = pancake3
+        break
 
       case 4:
-        img = pancake4;
-        break;
+        img = pancake4
+        break
 
       case 5:
-        img = pancake5;
-        break;
+        img = pancake5
+        break
 
       case 6:
-        img = pancake6;
-        break;
+        img = pancake6
+        break
 
       case 7:
-        img = pancake7;
-        break;
+        img = pancake7
+        break
 
       case 8:
-        img = pancake8;
-        break;
+        img = pancake8
+        break
 
       case 9:
-        img = pancake9;
-        break;
+        img = pancake9
+        break
 
       case 10:
-        img = pancake10;
-        break;
+        img = pancake10
+        break
 
       default:
-        break;
+        break
     }
 
     return img
   }
 
-
   return (
     <article
-      className={'pancake-box flex f-col jc-space-between ai-center'+(props.active_article === props.id ? ' acctive' : '')}
-      onMouseOver={()=>props.setActive(props.id)}
-      style={{ display: isDisplay ? 'block' : 'none', textAlign: "center"}}
+      className={'pancake-box flex f-col jc-space-between ai-center' + (isActive ? ' active' : '')}
+      onMouseOver={() => setIsActive(true)}
+      onMouseOut={() => setIsActive(false)}
+      style={{ display: isDisplay ? 'block' : 'none', textAlign: 'center' }}
     >
-      <img src={getImg(props.pancakes.id)} alt='pancakes icon' />
-      <h3 className='pancake-title'>{props.pancakes.title}</h3>
+      <img src={getImg(props.pancakes.id)} alt="pancakes icon" />
+      <h3 className="pancake-title">{props.pancakes.title}</h3>
       <p>{props.pancakes.weight}</p>
       <h3>{props.pancakes.price}</h3>
       <button onClick={openModal}>Informations</button>
@@ -134,24 +136,26 @@ function MenuArticle(props) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className='modal-content'>
-          <h2 className='modal-title' ref={(_subtitle) => (subtitle = _subtitle)}>{props.pancakes.title}</h2>
-          <img src={getImg(props.pancakes.id)} alt='pancakes icon' />
-          <hr className='separator'/>
+        <div className="modal-content">
+          <h2 className="modal-title" ref={(_subtitle) => (subtitle = _subtitle)}>
+            {props.pancakes.title}
+          </h2>
+          <img src={getImg(props.pancakes.id)} alt="pancakes icon" />
+          <hr className="separator" />
           <div>
-            <ul className='list-ingredients'>
-              {props.pancakes.recipe.map((ingredient) => (
-                ingredient
-                  ? <li>{ingredient}</li>
-                  : ""
-              ))}
+            <ul className="list-ingredients">
+              {props.pancakes.recipe.map((ingredient) =>
+                ingredient ? <li key={props.pancakes.id}>{ingredient}</li> : ''
+              )}
             </ul>
           </div>
-          <button className='modal-close-button' onClick={closeModal}>Retour</button>
+          <button className="modal-close-button" onClick={closeModal}>
+            Retour
+          </button>
         </div>
       </Modal>
-  </article>
-  );
+    </article>
+  )
 }
 
-export default MenuArticle;
+export default MenuArticle

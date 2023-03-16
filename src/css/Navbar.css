@@ -5,7 +5,7 @@
     font-size: 16px;
     text-decoration: none;
 }
-.navbar ul a.acctive{
+.navbar ul a.active{
     color: var(--main-color);
     font-size: 17px;
 }
