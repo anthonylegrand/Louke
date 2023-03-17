@@ -1,0 +1,33 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px !important; 
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  
+  .scroll-to-top.visible {
+    opacity: 1;
+  }
+  
+  .arrow {
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  

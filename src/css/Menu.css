@@ -14,18 +14,18 @@
     display: flex;
     align-items: center;
 }
-#Menu>div:nth-child(2)>div.acctive{
+#Menu>div:nth-child(2)>div.active{
     border-color: var(--main-color);
     background-color: var(--main-color);
     color: var(--background-color);
 }
-#Menu>div:nth-child(2)>div>lore{ margin-left: 5px; }
+#Menu>div:nth-child(2)>div>span{ margin-left: 5px; }
 
-#Menu>div:nth-child(3){ 
+#Menu>div:nth-child(3){
     width: 100%;
     flex-wrap: wrap;
     gap: 4em;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #Menu article{
@@ -36,12 +36,15 @@
     padding: 30px 50px;
     background-color: var(--background-color);
 }
-#Menu article.acctive{ background-color: var(--main-color); }
-#Menu article.acctive h3{ color: var(--background-color); }
-#Menu article.acctive p{ 
+#Menu article.active{ background-color: var(--main-color); }
+#Menu article.active h3{ color: var(--background-color); }
+#Menu article.active p{
     color: var(--background-color);
     opacity: .7;
     margin: 0.5em 0 1em;
+}
+#Menu article p{
+  margin: 0.5em 0 1em;
 }
 #Menu article button{
     transition: all .5s;
@@ -54,7 +57,7 @@
     margin-top: 1em;
     cursor: pointer;
 }
-#Menu article.acctive button{
+#Menu article.active button{
     max-height: 80px;
     padding: 5px 10px;
 }

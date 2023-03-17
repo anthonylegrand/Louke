@@ -1,84 +1,53 @@
-import React, { useState } from 'react';
-import { FaListAlt, FaHamburger, FaCloudMoon, FaCoins, FaCrown, FaDice, FaFish } from 'react-icons/fa';
+import React, { useState } from 'react'
 
+// Mocks
+import { filters } from '../mocks/filters'
+import { pancakes } from '../mocks/pancakes'
+
+// CSS
 import './../css/Menu.css'
 
-import Article from './Menu_Article'
-
-// Pas beau mais que pour utiliser une map pour faire plaisir à Kevin ;)
-const LIST = [
-    {
-        title: '',
-        icon: <FaListAlt/>
-    },
-    {
-        title: 'Menu',
-        icon: <FaFish/>
-    },
-    {
-        title: 'Pankakes',
-        icon: <FaHamburger/>
-    },
-    {
-        title: 'Accompagnement',
-        icon: <FaCloudMoon/>
-    },
-    {
-        title: 'Boissons',
-        icon: <FaCoins/>
-    },
-    {
-        title: 'Desserts',
-        icon: <FaCrown/>
-    },
-    {
-        title: 'Promotions',
-        icon: <FaDice/>
-    }
-]
+// Components
+import Article from './MenuArticle'
 
 function Menu() {
-    const [ section, setSection ] = useState("")
-    const [ active_article, setActive ] = useState(null)
+  const [section, setSection] = useState('')
+  const [menuFilter, setMenuFilter] = useState('Toutes nos recettes') // Hack to display all Pancakes on first render
+
+  const handleClick = (e) => {
+    const currentfilter = e.target.innerText
+
+    setSection(currentfilter)
+    setMenuFilter(currentfilter)
+  }
 
   return (
-    <div id='Menu' className='flex f-col ai-center jc-space-between page-padding'>
+    <div id="Menu" className="flex f-col ai-center jc-space-between page-padding">
+      <div className="flex f-col ai-center">
+        <p className="title">Le menu</p>
+        <h3>On a tous ce que vous aimez !</h3>
+      </div>
 
-        <div className='flex f-col ai-center'>
-          <lore className='title'>Le menu</lore>
-          <h3>On a tous ce que vous aimez !</h3>
-        </div>
+      <div className="flex f-row jc-space-between">
+        {filters.map((el, i) => createSectionComponent(el.title, el.icon, i))}
+      </div>
 
-        <div className='flex f-row jc-space-between'>
-
-            {
-                LIST.map((el, i) => createSectionComponent(el.title, el.icon, i))
-            }
-
-        </div>
-
-        <div className='flex f-row'>
-
-            {
-                [0,1,2,3,4,5].map((i) => (
-                    <Article active_article={active_article} setActive={setActive} id={i} />
-                ))
-            }
-
-        </div>
-
-        <div></div>
-
+      <div className="flex f-row">
+        {pancakes.map((pancake) => (
+          <Article key={pancake.id} pancake={pancake} menuFilter={menuFilter} />
+        ))}
+      </div>
     </div>
-  );
+  )
 
-  function createSectionComponent(title, icon, i){
+  function createSectionComponent(title, icon, i) {
     return (
-        <div key={i} className={section === title ? "acctive" : ""} onClick={()=>setSection(title)} >
-            {icon}<lore>{title}</lore>
-        </div>
+      <div key={i} className={section === title ? 'active' : ''} onClick={handleClick}>
+        {icon}
+        <span>{title}</span>
+      </div>
     )
   }
 }
 
-export default Menu;
+export default Menu
