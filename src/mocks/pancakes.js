@@ -1,7 +1,18 @@
+import pancake1 from '../img/pancakes/1.png'
+import pancake2 from '../img/pancakes/2.png'
+import pancake3 from '../img/pancakes/3.png'
+import pancake4 from '../img/pancakes/4.png'
+import pancake5 from '../img/pancakes/5.png'
+import pancake6 from '../img/pancakes/6.png'
+import pancake7 from '../img/pancakes/7.png'
+import pancake8 from '../img/pancakes/8.png'
+// import pancake9 from '../img/pancakes/9.png'
+// import pancake10 from '../img/pancakes/10.png'
+
 export const pancakes = [
   {
     id: 1,
-    image: '',
+    image: pancake1,
     title: 'Original Pancake Salé',
     weight: '75g',
     price: '7€',
@@ -21,7 +32,7 @@ export const pancakes = [
   },
   {
     id: 2,
-    image: '',
+    image: pancake2,
     title: 'Original Pancake Sucré',
     weight: '60g',
     price: '5€',
@@ -37,7 +48,7 @@ export const pancakes = [
   },
   {
     id: 3,
-    image: '',
+    image: pancake3,
     title: 'Original Pancake Salé Veggie',
     weight: '65g',
     price: '6€50',
@@ -56,7 +67,7 @@ export const pancakes = [
   },
   {
     id: 4,
-    image: '',
+    image: pancake4,
     title: 'Pancake aux 4 épices',
     weight: '60g',
     price: '4€',
@@ -76,7 +87,7 @@ export const pancakes = [
   },
   {
     id: 5,
-    image: '',
+    image: pancake5,
     title: 'Pancake Duo Fromages',
     weight: '65g',
     price: '6€50',
@@ -96,7 +107,7 @@ export const pancakes = [
   },
   {
     id: 6,
-    image: '',
+    image: pancake6,
     title: 'Pancake Chèvre Miel',
     weight: '75g',
     price: '5€50',
@@ -115,7 +126,7 @@ export const pancakes = [
   },
   {
     id: 7,
-    image: '',
+    image: pancake7,
     title: 'Pancake Pistaches Framboises',
     weight: '60g',
     price: '5€',
@@ -133,7 +144,7 @@ export const pancakes = [
   },
   {
     id: 8,
-    image: '',
+    image: pancake8,
     title: 'Pancake Moment Café',
     weight: '65g',
     price: '4€',
@@ -153,7 +164,7 @@ export const pancakes = [
   }
   // {
   //   id: 9,
-  //   image: "",
+  //   image: pancake9,
   //   title: "Pancake Pause Speculoos",
   //   weight: "60g",
   //   price: "4€50",

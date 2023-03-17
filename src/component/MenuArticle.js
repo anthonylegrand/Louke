@@ -1,18 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
-// Images pancakes
-import pancake1 from '../img/pancakes/1.png'
-import pancake2 from '../img/pancakes/2.png'
-import pancake3 from '../img/pancakes/3.png'
-import pancake4 from '../img/pancakes/4.png'
-import pancake5 from '../img/pancakes/5.png'
-import pancake6 from '../img/pancakes/6.png'
-import pancake7 from '../img/pancakes/7.png'
-import pancake8 from '../img/pancakes/8.png'
-import pancake9 from '../img/pancakes/9.png'
-import pancake10 from '../img/pancakes/10.png'
-
 import './../css/MenuArticle.css'
 
 const customStyles = {
@@ -34,16 +22,17 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-function MenuArticle(props) {
+function MenuArticle({ pancake, menuFilter }) {
   let subtitle
+  const { id, image, title, weight, price, recipe, filter } = pancake
 
   const [modalIsOpen, setIsOpen] = React.useState(false)
   const [isDisplay, setIsDisplay] = useState(true)
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    // Set isDisplay state if pancakes filter include filter targeted
-    if (props.pancakes.filter.includes(props.filter)) {
+    // Set isDisplay state if pancake filter include filter targeted
+    if (filter.includes(menuFilter)) {
       setIsDisplay(true)
     }
 
@@ -51,7 +40,7 @@ function MenuArticle(props) {
       // Clear isDisplay state after every render
       setIsDisplay(false)
     }
-  }, [props.filter, props.pancakes.filter])
+  }, [filter, menuFilter])
 
   const openModal = () => {
     setIsOpen(true)
@@ -66,56 +55,6 @@ function MenuArticle(props) {
     subtitle.style.color = '#f00'
   }
 
-  const getImg = (id) => {
-    let img = ''
-
-    switch (id) {
-      case 1:
-        img = pancake1
-        break
-
-      case 2:
-        img = pancake2
-        break
-      case 3:
-        img = pancake3
-        break
-
-      case 4:
-        img = pancake4
-        break
-
-      case 5:
-        img = pancake5
-        break
-
-      case 6:
-        img = pancake6
-        break
-
-      case 7:
-        img = pancake7
-        break
-
-      case 8:
-        img = pancake8
-        break
-
-      case 9:
-        img = pancake9
-        break
-
-      case 10:
-        img = pancake10
-        break
-
-      default:
-        break
-    }
-
-    return img
-  }
-
   return (
     <article
       className={'pancake-box flex f-col jc-space-between ai-center' + (isActive ? ' active' : '')}
@@ -123,10 +62,10 @@ function MenuArticle(props) {
       onMouseOut={() => setIsActive(false)}
       style={{ display: isDisplay ? 'block' : 'none', textAlign: 'center' }}
     >
-      <img src={getImg(props.pancakes.id)} alt="pancakes icon" />
-      <h3 className="pancake-title">{props.pancakes.title}</h3>
-      <p>{props.pancakes.weight}</p>
-      <h3>{props.pancakes.price}</h3>
+      <img src={image} alt="pancakes icon" />
+      <h3 className="pancake-title">{title}</h3>
+      <p>{weight}</p>
+      <h3>{price}</h3>
       <button onClick={openModal}>Informations</button>
 
       <Modal
@@ -138,15 +77,13 @@ function MenuArticle(props) {
       >
         <div className="modal-content">
           <h2 className="modal-title" ref={(_subtitle) => (subtitle = _subtitle)}>
-            {props.pancakes.title}
+            {title}
           </h2>
-          <img src={getImg(props.pancakes.id)} alt="pancakes icon" />
+          <img src={image} alt="pancakes icon" />
           <hr className="separator" />
           <div>
             <ul className="list-ingredients">
-              {props.pancakes.recipe.map((ingredient) =>
-                ingredient ? <li key={props.pancakes.id}>{ingredient}</li> : ''
-              )}
+              {recipe.map((ingredient) => (ingredient ? <li key={id}>{ingredient}</li> : ''))}
             </ul>
           </div>
           <button className="modal-close-button" onClick={closeModal}>

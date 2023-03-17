@@ -12,13 +12,13 @@ import Article from './MenuArticle'
 
 function Menu() {
   const [section, setSection] = useState('')
-  const [filter, setFilter] = useState('Toutes nos recettes') // Hack to display all Pancakes on first render
+  const [menuFilter, setMenuFilter] = useState('Toutes nos recettes') // Hack to display all Pancakes on first render
 
   const handleClick = (e) => {
     const currentfilter = e.target.innerText
 
     setSection(currentfilter)
-    setFilter(currentfilter)
+    setMenuFilter(currentfilter)
   }
 
   return (
@@ -34,7 +34,7 @@ function Menu() {
 
       <div className="flex f-row">
         {pancakes.map((pancake) => (
-          <Article key={pancake.id} pancakes={pancake} id={pancake.id} filter={filter} />
+          <Article key={pancake.id} pancake={pancake} menuFilter={menuFilter} />
         ))}
       </div>
     </div>
