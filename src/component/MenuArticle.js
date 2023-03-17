@@ -23,7 +23,6 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 function MenuArticle({ pancake, menuFilter }) {
-  let subtitle
   const { id, image, title, weight, price, recipe, filter } = pancake
 
   const [modalIsOpen, setIsOpen] = React.useState(false)
@@ -50,11 +49,6 @@ function MenuArticle({ pancake, menuFilter }) {
     setIsOpen(false)
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00'
-  }
-
   return (
     <article
       className={'pancake-box flex f-col jc-space-between ai-center' + (isActive ? ' active' : '')}
@@ -68,17 +62,9 @@ function MenuArticle({ pancake, menuFilter }) {
       <h3>{price}</h3>
       <button onClick={openModal}>Informations</button>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
         <div className="modal-content">
-          <h2 className="modal-title" ref={(_subtitle) => (subtitle = _subtitle)}>
-            {title}
-          </h2>
+          <h2 className="modal-title">{title}</h2>
           <img src={image} alt="pancakes icon" />
           <hr className="separator" />
           <div>

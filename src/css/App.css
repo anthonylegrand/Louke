@@ -1,10 +1,10 @@
 :root {
   --background-color: #fff;
-  --main-color: #EB2929;
+  --main-color: #AC1E44;
   --secondary-color: #FDECEA;
 
   --title-text-color: #555555;
-  --main-text-color: #000000;
+  --main-text-color: #231651;
   --secondary-text-color: #999999;
 
   --navbar-text-color: #7F7F7F;
@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
 h2, .page-title{
     font-size: 22px;
     line-height: 20px;
-    color: var(--title-text-color);
+    color: var(--main-text-color);
     font-weight: bold;
 }
 h3, .main-text{
