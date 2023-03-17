@@ -1,8 +1,11 @@
 import './../css/ApplicationMobile.css'
-
+import React from 'react'
 import phone from './../img/stickers/phone.png'
 import google from './../img/stickers/google.png'
 import apple from './../img/stickers/apple.png'
+
+// Components
+import ScrollToTopButton from './ScrollToTopButton'
 
 function ApplicationMobile() {
   return (
@@ -11,8 +14,8 @@ function ApplicationMobile() {
 
       <div>
         <h3>Télécharger l’application.</h3>
-        <p>Pour géolocaliser en temps réel votre foostruck à proximité.</p>
-        <p>Regalez vous avec Louke !</p>
+        <p>Pour géolocaliser en temps réel votre foodtrucks proche de vous.</p>
+        <p>Régalez-vous avec Louke !</p>
         <div className="flex f-row test-img-div">
           <div className="google-store">
             <a href="https://play.google.com/store/apps" target="_blank" rel="noreferrer">
@@ -26,6 +29,7 @@ function ApplicationMobile() {
           </div>
         </div>
       </div>
+      <ScrollToTopButton id="cssscroll"  />
     </div>
   )
 }

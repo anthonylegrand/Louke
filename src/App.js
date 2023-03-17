@@ -11,7 +11,7 @@ import Footer from './component/Footer'
 function App() {
   return (
     <div>
-      <section className="flex f-col" style={{ paddingTop: '2em' }}>
+      <section id="top" className="flex f-col" style={{ paddingTop: '2em' }}>
         <Navbar currentPage="/" />
 
         <Home />

@@ -6,11 +6,11 @@ function Home() {
     <div id="Home" className="flex f-row jc-space-between ai-center">
       <div className="page-padding">
         <div className="tag">
-          <label>The best eat ! 🔥</label>
+          <label>The best meal ! 🔥</label>
         </div>
 
         <h2>
-          Découvrir les meilleurs FoodTrucks de ta ville. 100% <b>Pancakes</b>
+          Découvrir les meilleurs FoodTrucks de ta ville. 100% <b>Pancakes</b> !
         </h2>
         <h4 className="secondary-text">
           La carte gourmande qui réveille tes papilles : déguste les meilleurs pancakes de ta ville.{' '}

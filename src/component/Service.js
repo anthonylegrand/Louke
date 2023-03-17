@@ -16,19 +16,19 @@ function Service() {
         <div>
           <img src={home_made_svg} alt="icon" />
           <h3>Fait maison</h3>
-          <p>Produits préparé et cuisiné sur place</p>
+          <p>Produits préparés et cuisinés sur place</p>
         </div>
 
         <div>
           <img src={local_products_svg} alt="icon" />
           <h3>Produits locaux</h3>
-          <p>Produit provenant de fournisseurs locaux et de region</p>
+          <p>Produits en provenance de fournisseurs locaux et de la région</p>
         </div>
 
         <div>
           <img src={small_prices_svg} alt="icon" />
           <h3>Petit prix</h3>
-          <p>Nous vous proposont les prix les plus bas possible !</p>
+          <p>Nous vous proposons des prix au plus bas possible !</p>
         </div>
       </div>
     </div>

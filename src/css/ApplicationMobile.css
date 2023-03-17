@@ -19,3 +19,8 @@
 #Application_Mobile .img-store {
   max-width: 200px;
 }
+
+#Application_mobile #cssscroll{
+  width: 30%;
+  height: 80%;
+}
