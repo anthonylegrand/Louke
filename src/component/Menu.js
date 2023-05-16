@@ -1,16 +1,11 @@
+import Article from './MenuArticle'
 import React, { useState } from 'react'
-
-// Mocks
 import { filters } from '../mocks/filters'
 import { pancakes } from '../mocks/pancakes'
 
-// CSS
 import './../css/Menu.css'
 
-// Components
-import Article from './MenuArticle'
-
-function Menu() {
+const Menu = () => {
   const [section, setSection] = useState('')
   const [menuFilter, setMenuFilter] = useState('Toutes nos recettes') // Hack to display all Pancakes on first render
 
@@ -21,8 +16,17 @@ function Menu() {
     setMenuFilter(currentfilter)
   }
 
+  const createSectionComponent = (title, icon, i) => {
+    return (
+      <div key={i} className={section === title ? 'active' : ''} onClick={handleClick}>
+        {icon}
+        <span>{title}</span>
+      </div>
+    )
+  }
+
   return (
-    <div id="Menu" className="flex f-col ai-center jc-space-between page-padding">
+    <div id="menu" className="flex f-col ai-center jc-space-between page-padding">
       <div className="flex f-col ai-center">
         <p className="title">Le menu</p>
         <h3>On a tous ce que vous aimez !</h3>
@@ -39,15 +43,6 @@ function Menu() {
       </div>
     </div>
   )
-
-  function createSectionComponent(title, icon, i) {
-    return (
-      <div key={i} className={section === title ? 'active' : ''} onClick={handleClick}>
-        {icon}
-        <span>{title}</span>
-      </div>
-    )
-  }
 }
 
 export default Menu

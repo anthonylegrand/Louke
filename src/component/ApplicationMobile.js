@@ -1,15 +1,13 @@
-import './../css/ApplicationMobile.css'
 import React from 'react'
-import phone from './../img/stickers/phone.png'
-import google from './../img/stickers/google.png'
-import apple from './../img/stickers/apple.png'
-
-// Components
 import ScrollToTopButton from './ScrollToTopButton'
+import apple from './../img/stickers/apple.png'
+import google from './../img/stickers/google.png'
+import phone from './../img/stickers/phone.png'
+import './../css/ApplicationMobile.css'
 
-function ApplicationMobile() {
+const ApplicationMobile = () => {
   return (
-    <div id="Application_Mobile" className="flex f-row ai-center jc-space-between page-padding">
+    <div id="application-mobile" className="flex f-row ai-center jc-space-between page-padding">
       <img className="phone-img" src={phone} alt="Phone" />
 
       <div>

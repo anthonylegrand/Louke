@@ -1,21 +1,26 @@
-#Application_Mobile>div{ width: 50%; }
-#Application_Mobile h3{
-    font-size: 45px;
-    line-height: 50px;
-    margin: 0.25em 0 0.75em;
+#application-mobile>div {
+  width: 50%;
 }
-#Application_Mobile p{
-    font-size: 19px;
-    line-height: 20px;
+
+#application-mobile h3 {
+  font-size: 45px;
+  line-height: 50px;
+  margin: 0.25em 0 0.75em;
 }
-#Application_Mobile>div img{
+
+#application-mobile p {
+  font-size: 19px;
+  line-height: 20px;
+}
+
+#application-mobile>div img {
   margin: 2em 2em 0 0;
 }
 
-#Application_Mobile img.phone-img{
+#application-mobile img.phone-img {
   width: 25%;
 }
 
-#Application_Mobile .img-store {
+#application-mobile .img-store {
   max-width: 200px;
 }

@@ -1,12 +1,12 @@
-import './../css/Service.css'
-
 import home_made_svg from './../img/stickers/home-made.svg'
 import local_products_svg from './../img/stickers/local-products.svg'
 import small_prices_svg from './../img/stickers/small-prices.svg'
 
-function Service() {
+import './../css/Service.css'
+
+const Service = () => {
   return (
-    <div id="Service" className="flex f-col ai-center jc-space-between">
+    <div id="service" className="flex f-col ai-center jc-space-between">
       <div className="flex f-col ai-center">
         <p className="title">Nos services</p>
         <h3>Un large choix de fait maison</h3>

@@ -1,10 +1,10 @@
-import './../css/Footer.css'
-
 import facebook from './../img/stickers/facebook.png'
 import instagram from './../img/stickers/instagram.png'
 import twitter from './../img/stickers/twitter.png'
 
-function Footer() {
+import './../css/Footer.css'
+
+const Footer = () => {
   return (
     <footer className="page-padding">
       <div className="flex jc-center socials-medias">

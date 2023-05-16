@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
+import React, { useEffect, useState } from 'react'
 
 import './../css/MenuArticle.css'
 
@@ -22,7 +22,7 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-function MenuArticle({ pancake, menuFilter }) {
+const MenuArticle = ({ pancake, menuFilter }) => {
   const { id, image, title, weight, price, recipe, filter } = pancake
 
   const [modalIsOpen, setIsOpen] = React.useState(false)
@@ -45,7 +45,7 @@ function MenuArticle({ pancake, menuFilter }) {
     setIsOpen(true)
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 

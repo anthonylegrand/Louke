@@ -1,7 +1,7 @@
 .separator {
-  background-color: var(--main-text-color);
+  background-color: var(--main-color);
   border: none;
-  height: 2px;
+  height: 3px;
   width: 20%;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .modal-title {
-  margin: 30px 0;
   color: var(--main-color);
+  margin: 30px 0;
 }
 
 .modal-description {
@@ -25,7 +25,7 @@
 .modal-close-button {
   background-color: var(--main-color);
   border: none;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
   font-weight: bold;
   margin: 30px 0;

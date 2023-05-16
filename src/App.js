@@ -1,14 +1,14 @@
-import React from 'react'
-import './css/App.css'
-
-import Navbar from './component/Navbar'
-import Home from './component/Home'
-import Service from './component/Service'
-import Menu from './component/Menu'
 import ApplicationMobile from './component/ApplicationMobile'
 import Footer from './component/Footer'
+import Home from './component/Home'
+import Menu from './component/Menu'
+import Navbar from './component/Navbar'
+import React from 'react'
+import Service from './component/Service'
 
-function App() {
+import './css/App.css'
+
+const App = () => {
   return (
     <div>
       <section className="flex f-col" style={{ paddingTop: '2em' }}>

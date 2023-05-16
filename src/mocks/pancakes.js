@@ -6,8 +6,6 @@ import pancake5 from '../img/pancakes/5.png'
 import pancake6 from '../img/pancakes/6.png'
 import pancake7 from '../img/pancakes/7.png'
 import pancake8 from '../img/pancakes/8.png'
-// import pancake9 from '../img/pancakes/9.png'
-// import pancake10 from '../img/pancakes/10.png'
 
 export const pancakes = [
   {
@@ -162,41 +160,4 @@ export const pancakes = [
     ],
     filter: ['Desserts', 'Accompagnements', 'Toutes nos recettes']
   }
-  // {
-  //   id: 9,
-  //   image: pancake9,
-  //   title: "Pancake Pause Speculoos",
-  //   weight: "60g",
-  //   price: "4€50",
-  //   recipe: [
-  //     "🌾 25g de farine",
-  //     "🧈1/8 de sachet de levure chimique",
-  //     "🧂 1 pincée de sel",
-  //     "🧂 1/2 cuillère à soupe de sucre",
-  //     "🥚 1/2 oeuf",
-  //     "🥛 40ml de lait d’avoine",
-  //     "1/2 cuillère à soupe d'huile végétale",
-  //     "1 cuillère à soupe de pâte de speculoos",
-  //   ],
-  //   filter: ["Promotion", "Toutes nos recettes"]
-  // },
-  // {
-  //   id: 10,
-  //   image: "",
-  //   title: "Pancake Atlantique",
-  //   weight: "75g",
-  //   price: "7€",
-  //   recipe: [
-  //     "🌾 25g de farine",
-  //     "🧈 1/2 cuillère à café de levure chimique",
-  //     "🧂 1 pincée de sel",
-  //     "🥚 1/2 oeuf",
-  //     "🥛 40ml de lait",
-  //     "1/2 cuillère à soupe d'huile végétale",
-  //     "30g de saumon fumé",
-  //     "1 cuillère à soupe de ciboulette ciselée",
-  //     "Poivre noir"
-  //   ],
-  //   filter: ["Pancake", "Toutes nos recettes"]
-  // },
 ]

@@ -1,7 +1,8 @@
 import Logo from './../img/logo.png'
+
 import './../css/Navbar.css'
 
-function Navbar(props) {
+const Navbar = (props) => {
   return (
     <div className="navbar page-padding flex f-row jc-space-between ai-center">
       <a href="/">
@@ -9,16 +10,16 @@ function Navbar(props) {
       </a>
 
       <ul className="flex f-row">
-        <a href="#Home" className="active">
+        <a href="#home" className="active">
           <li>Home</li>
         </a>
-        <a href="#Service">
+        <a href="#service">
           <li>Service</li>
         </a>
-        <a href="#Menu">
+        <a href="#menu">
           <li>Menu</li>
         </a>
-        <a href="#Application_Mobile">
+        <a href="#application-mobile">
           <li>Application Mobile</li>
         </a>
       </ul>

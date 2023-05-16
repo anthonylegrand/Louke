@@ -1,9 +1,10 @@
-import './../css/Home.css'
 import Truck_svg from './../img/truck.svg'
 
-function Home() {
+import './../css/Home.css'
+
+const Home = () => {
   return (
-    <div id="Home" className="flex f-row jc-space-between ai-center">
+    <div id="home" className="flex f-row jc-space-between ai-center">
       <div className="page-padding">
         <div className="tag">
           <label>The best meal ! 🔥</label>
@@ -17,10 +18,10 @@ function Home() {
         </h4>
 
         <div className="flex f-row">
-          <a className="button red" href="/#Menu">
+          <a className="button red" href="/#menu">
             Le Menu
           </a>
-          <a className="button" href="/#Service">
+          <a className="button" href="/#service">
             Nos Services
           </a>
         </div>
