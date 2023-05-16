@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <section className="flex f-col" style={{ paddingTop: '2em' }}>
-        <Navbar currentPage="/" />
+        <Navbar />
 
         <Home />
       </section>

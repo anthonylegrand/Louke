@@ -9,16 +9,14 @@ const Menu = () => {
   const [section, setSection] = useState('')
   const [menuFilter, setMenuFilter] = useState('Toutes nos recettes') // Hack to display all Pancakes on first render
 
-  const handleClick = (e) => {
-    const currentfilter = e.target.innerText
-
+  const handleClick = (currentfilter) => {
     setSection(currentfilter)
     setMenuFilter(currentfilter)
   }
 
-  const createSectionComponent = (title, icon, i) => {
+  const createSectionComponent = (title, icon) => {
     return (
-      <div key={i} className={section === title ? 'active' : ''} onClick={handleClick}>
+      <div key={title} className={section === title ? 'active' : ''} onClick={() => handleClick(title)}>
         {icon}
         <span>{title}</span>
       </div>
@@ -33,7 +31,7 @@ const Menu = () => {
       </div>
 
       <div className="flex f-row jc-space-between">
-        {filters.map((el, i) => createSectionComponent(el.title, el.icon, i))}
+        {filters.map((el, i) => createSectionComponent(el.title, el.icon))}
       </div>
 
       <div className="flex f-row">

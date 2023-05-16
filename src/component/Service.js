@@ -14,19 +14,19 @@ const Service = () => {
 
       <div className="flex f-row jc-space-between page-padding">
         <div>
-          <img src={home_made_svg} alt="icon" />
+          <img src={home_made_svg} alt="Icone représentant des produits fait maison" />
           <h3>Fait maison</h3>
           <p>Produits préparés et cuisinés sur place</p>
         </div>
 
         <div>
-          <img src={local_products_svg} alt="icon" />
+          <img src={local_products_svg} alt="Icone représentant des produits locaux" />
           <h3>Produits locaux</h3>
           <p>Produits en provenance de fournisseurs locaux et de la région</p>
         </div>
 
         <div>
-          <img src={small_prices_svg} alt="icon" />
+          <img src={small_prices_svg} alt="Icone représentant une étiquette de petit prix" />
           <h3>Petit prix</h3>
           <p>Nous vous proposons des prix au plus bas possible !</p>
         </div>

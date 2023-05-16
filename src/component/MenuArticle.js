@@ -1,5 +1,5 @@
 import Modal from 'react-modal'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './../css/MenuArticle.css'
 
@@ -25,35 +25,29 @@ Modal.setAppElement('#root')
 const MenuArticle = ({ pancake, menuFilter }) => {
   const { id, image, title, weight, price, recipe, filter } = pancake
 
-  const [modalIsOpen, setIsOpen] = React.useState(false)
+  const [modalIsOpen, setIsOpen] = useState(false)
   const [isDisplay, setIsDisplay] = useState(true)
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    // Set isDisplay state if pancake filter include filter targeted
-    if (filter.includes(menuFilter)) {
-      setIsDisplay(true)
-    }
-
-    return () => {
-      // Clear isDisplay state after every render
-      setIsDisplay(false)
-    }
+    setIsDisplay(filter.includes(menuFilter))
   }, [filter, menuFilter])
 
   const openModal = () => {
     setIsOpen(true)
+    setIsActive(true)
   }
 
   const closeModal = () => {
     setIsOpen(false)
+    setIsActive(false)
   }
 
   return (
     <article
-      className={'pancake-box flex f-col jc-space-between ai-center' + (isActive ? ' active' : '')}
-      onMouseOver={() => setIsActive(true)}
-      onMouseOut={() => setIsActive(false)}
+      className={`pancake-box flex f-col jc-space-between ai-center${isActive ? ' active' : ''}`}
+      onMouseEnter={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}
       style={{ display: isDisplay ? 'block' : 'none', textAlign: 'center' }}
     >
       <img src={image} alt="pancakes icon" />
@@ -69,7 +63,7 @@ const MenuArticle = ({ pancake, menuFilter }) => {
           <hr className="separator" />
           <div>
             <ul className="list-ingredients">
-              {recipe.map((ingredient) => (ingredient ? <li key={id}>{ingredient}</li> : ''))}
+              {recipe.map((ingredient, index) => (ingredient ? <li key={`${id}-${index}`}>{ingredient}</li> : null))}
             </ul>
           </div>
           <button className="modal-close-button" onClick={closeModal}>

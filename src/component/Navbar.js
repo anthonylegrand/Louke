@@ -2,7 +2,7 @@ import Logo from './../img/logo.png'
 
 import './../css/Navbar.css'
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <div className="navbar page-padding flex f-row jc-space-between ai-center">
       <a href="/">
@@ -10,18 +10,20 @@ const Navbar = (props) => {
       </a>
 
       <ul className="flex f-row">
-        <a href="#home" className="active">
-          <li>Home</li>
-        </a>
-        <a href="#service">
-          <li>Service</li>
-        </a>
-        <a href="#menu">
-          <li>Menu</li>
-        </a>
-        <a href="#application-mobile">
-          <li>Application Mobile</li>
-        </a>
+        <li>
+          <a href="#home" className="active">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#service">Service</a>
+        </li>
+        <li>
+          <a href="#menu">Menu</a>
+        </li>
+        <li>
+          <a href="#application-mobile">Application Mobile</a>
+        </li>
       </ul>
     </div>
   )

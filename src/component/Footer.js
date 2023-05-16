@@ -9,20 +9,20 @@ const Footer = () => {
     <footer className="page-padding">
       <div className="flex jc-center socials-medias">
         <a href="https://www.instagram.com/?hl=fr" target="_blank" rel="noreferrer">
-          <img src={twitter} alt="twitter" />
+          <img src={twitter} alt="Logo Twitter" />
         </a>
         <a href="https://twitter.com/home?lang=fr" target="_blank" rel="noreferrer">
-          <img src={instagram} alt="instagram" />
+          <img src={instagram} alt="Logo Instagram" />
         </a>
         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-          <img src={facebook} alt="facebook" />
+          <img src={facebook} alt="Logo Facebook" />
         </a>
       </div>
 
       <hr className="separator" />
 
       <div className="flex jc-center">
-        <p>Louke ©2022 , Tout droit réservé.</p>
+        <p>Louke ©2023, Tout droit réservé.</p>
       </div>
     </footer>
   )
